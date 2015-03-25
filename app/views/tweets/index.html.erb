@@ -1,0 +1,19 @@
+<h1>Recent tweets</h1>
+
+    <% @tweets.each do |tweet| %>
+   
+
+<div class="panel panel-default">
+  <div class="panel-body">
+     <%= tweet.content %>
+  </div>
+  <div class="panel-footer">sent by <%= tweet.user.email %> on <%= tweet.created_at.strftime("%m/%d/%Y") %> at <%= tweet.created_at.strftime("%I:%M%p") %> </div>
+  
+
+</div>
+    <% end %>
+
+
+<br>
+
+<%= link_to 'New Tweet', new_tweet_path %>
